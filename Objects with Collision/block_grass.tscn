@@ -7,7 +7,7 @@ data = PackedVector3Array(0.4198, 1, -0.4198, 0.5, 1, -0.2263, 0.5, 1, 0.2262, 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qjfy3"]
 
-[node name="block-grass_edge_1" instance=ExtResource("1_6vvbs")]
+[node name="block-grass" instance=ExtResource("1_6vvbs")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 shape = SubResource("ConcavePolygonShape3D_n4nyo")
