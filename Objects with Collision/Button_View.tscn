@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciyj23ggimrwo"]
+
+[ext_resource type="PackedScene" uid="uid://g73m8k0j7lyo" path="res://objects/button.tscn" id="1_0itl8"]
+
+[node name="button" instance=ExtResource("1_0itl8")]
+
+[node name="StaticBody3D" parent="." index="3"]
+disable_mode = 1
