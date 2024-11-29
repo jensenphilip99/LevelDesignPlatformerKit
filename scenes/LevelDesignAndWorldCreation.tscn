@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dceksomi0gou2"]
+[gd_scene load_steps=35 format=3 uid="uid://dceksomi0gou2"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_up5ou"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_sjceo"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://dhxok27jxvik8" path="res://objects/flag.tscn" id="22_w6jhc"]
 [ext_resource type="PackedScene" uid="uid://dmst6jf3shjg0" path="res://Objects with Collision/tower_building_block.tscn" id="26_ukpr7"]
 [ext_resource type="PackedScene" uid="uid://bd8itfyp6bgw" path="res://models/prototyping/models/column.glb" id="27_r6vyr"]
+[ext_resource type="PackedScene" uid="uid://d2fiws3me3mvf" path="res://models/prototyping/models/wall-round-low.glb" id="28_r8fym"]
+[ext_resource type="PackedScene" uid="uid://cqdmicia4gklj" path="res://models/props/platform-fortified.glb" id="29_537v7"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
 auto_exposure_scale = 0.75
@@ -65,7 +67,7 @@ environment = ExtResource("1_up5ou")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_sjceo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5591, 44.27, -11.224)
 view = NodePath("../View")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
@@ -219,6 +221,7 @@ trampoline_strength = 20.0
 
 [node name="flag" parent="World" instance=ExtResource("22_w6jhc")]
 transform = Transform3D(2.8583, 0, 0, 0, 2.8583, 0, 0, 0, 2.8583, 26.4403, 79.3866, -23.4721)
+visible = false
 
 [node name="Moving Platform 1" type="Node3D" parent="World"]
 
@@ -239,19 +242,11 @@ target = NodePath("../moving_object_path")
 
 [node name="door" parent="World" instance=ExtResource("17_q4dtg")]
 transform = Transform3D(0.0103147, 0, 0.999947, 0, 1, 0, -0.999947, 0, 0.0103147, 26.5367, 81.2223, -23.5462)
-visible = false
 look_at_door_when_opens = true
 
 [node name="button" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("17_uvilp")]
 transform = Transform3D(2.22341, 0, 0, 0, 1.01449, 0, 0, 0, 2.23744, 5.4646, 0.25897, -2.79986)
-visible = false
 target = NodePath("../door")
-
-[node name="floor-thick2" parent="World" instance=ExtResource("19_q0o68")]
-transform = Transform3D(25.6233, 0, 0, 0, 3.08786, 0, 0, 0, 25.6233, 26.3657, 40.0394, -23.711)
-
-[node name="floor-thick3" parent="World" instance=ExtResource("19_q0o68")]
-transform = Transform3D(18.7761, 0, 0, 0, 2.2627, 0, 0, 0, 18.7761, 26.3657, 65.9554, -23.711)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 5, 0, 7)
@@ -376,16 +371,6 @@ vertical_alignment = 1
 [node name="TowerBuildingBlock" parent="." instance=ExtResource("26_ukpr7")]
 transform = Transform3D(3.83764, 0, 0, 0, 43.1136, 0, 0, 0, 3.83764, 26.1992, -2.45509, -23.7611)
 
-[node name="TowerBuildingBlock2" parent="." instance=ExtResource("26_ukpr7")]
-transform = Transform3D(2.7963, 0, 0, 0, 25.7343, 0, 0, 0, 2.7963, 26.2471, 40.6723, -23.8726)
-
-[node name="TowerBuildingBlock3" parent="." instance=ExtResource("26_ukpr7")]
-transform = Transform3D(1.93044, 0, 0, 0, 17.7658, 0, 0, 0, 1.93044, 26.2471, 66.1662, -23.8726)
-
-[node name="TowerBuildingBlock4" parent="." instance=ExtResource("26_ukpr7")]
-transform = Transform3D(1.12229, 0, 0, 0, 10.3284, 0, 0, 0, 1.12229, 26.1992, 68.9102, -23.7611)
-visible = false
-
 [node name="column2" parent="." instance=ExtResource("27_r6vyr")]
 transform = Transform3D(9.12779, 0, 0, 0, 42.6618, 0, 0, 0, 9.12779, 40.2981, -1.98186, -14.2194)
 
@@ -396,13 +381,40 @@ transform = Transform3D(9.12779, 0, 0, 0, 42.6618, 0, 0, 0, 9.12779, 40.2981, -1
 transform = Transform3D(9.12779, 0, 0, 0, 42.6618, 0, 0, 0, 9.12779, 40.3484, -1.98186, -24.2194)
 
 [node name="column5" parent="." instance=ExtResource("27_r6vyr")]
-transform = Transform3D(-3.98988e-07, 0, -9.12779, 0, 42.6618, 0, 9.12779, 0, -3.98988e-07, 16.7574, -1.98186, -10.2009)
+transform = Transform3D(-8.94702e-07, 0, -18.9891, 0, 42.6618, 0, 20.4684, 0, -8.3004e-07, 16, -2.982, -9.201)
 
 [node name="column6" parent="." instance=ExtResource("27_r6vyr")]
-transform = Transform3D(-3.98988e-07, 0, -9.12779, 0, 42.6618, 0, 9.12779, 0, -3.98988e-07, 36.7574, -1.98186, -10.2009)
+transform = Transform3D(-8.94702e-07, 0, -18.9891, 0, 42.6618, 0, 20.4684, 0, -8.3004e-07, 25.7574, -2.98186, -9.2009)
 
 [node name="column7" parent="." instance=ExtResource("27_r6vyr")]
-transform = Transform3D(-3.98988e-07, 0, -9.12779, 0, 42.6618, 0, 9.12779, 0, -3.98988e-07, 26.7574, -1.98186, -10.1507)
+transform = Transform3D(-8.94702e-07, 0, -18.9891, 0, 42.6618, 0, 20.4684, 0, -8.3004e-07, 35.7574, -2.98186, -9.2009)
+
+[node name="column8" parent="." instance=ExtResource("27_r6vyr")]
+transform = Transform3D(-8.94702e-07, 0, -18.9891, 0, 42.6618, 0, 20.4684, 0, -8.3004e-07, 35.7574, -2.98186, 1.7991)
+
+[node name="column10" parent="." instance=ExtResource("27_r6vyr")]
+transform = Transform3D(-8.94702e-07, 0, -18.9891, 0, 42.6618, 0, 20.4684, 0, -8.3004e-07, 35.7574, -2.98186, 12.7991)
+
+[node name="wall-round-low2" parent="." instance=ExtResource("28_r8fym")]
+transform = Transform3D(-4.01494e-07, -4.1327, 0, 6.12887, -1.20538e-07, -6.8413, 6.8413, -1.34549e-07, 6.12887, 36.8477, 15.8692, -3.432)
+
+[node name="wall-round-low5" parent="." instance=ExtResource("28_r8fym")]
+transform = Transform3D(-4.01494e-07, -4.1327, 0, 6.12887, -1.20538e-07, -6.8413, 6.8413, -1.34549e-07, 6.12887, 36.8477, 15.8692, 7.568)
+
+[node name="wall-round-low3" parent="." instance=ExtResource("28_r8fym")]
+transform = Transform3D(-4.01494e-07, -4.1327, 0, 6.12887, -1.20538e-07, -6.8413, 6.8413, -1.34549e-07, 6.12887, 36.8477, 30.8692, -3.432)
+
+[node name="wall-round-low4" parent="." instance=ExtResource("28_r8fym")]
+transform = Transform3D(-4.01494e-07, -4.1327, 0, 6.12887, -1.20538e-07, -6.8413, 6.8413, -1.34549e-07, 6.12887, 36.8477, 30.8692, 7.568)
+
+[node name="platform-fortified2" parent="." instance=ExtResource("29_537v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8608, 39.5184, 4.26986)
+
+[node name="platform-fortified3" parent="." instance=ExtResource("29_537v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8608, 39.5184, 10.5929)
+
+[node name="floor-thick2" parent="." instance=ExtResource("19_q0o68")]
+transform = Transform3D(2.83365, 0, 0, 0, 2.83365, 0, 0, 0, 2.83365, 29.0407, 40.426, -11.1186)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
