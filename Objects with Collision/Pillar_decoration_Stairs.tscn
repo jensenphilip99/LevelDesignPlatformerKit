@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn1qchvu2lyhx"]
+
+[ext_resource type="PackedScene" uid="uid://deowq1gds0jr0" path="res://models/prototyping/models/stairs.glb" id="1_ft8b2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ee73"]
+albedo_color = Color(0.419813, 0.419813, 0.419813, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5tb5q"]
+
+[node name="stairs2" instance=ExtResource("1_ft8b2")]
+
+[node name="stairs" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0ee73")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505115, 0)
+shape = SubResource("BoxShape3D_5tb5q")
