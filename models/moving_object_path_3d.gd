@@ -41,11 +41,11 @@ func _process(delta: float) -> void:
 				path_follow_3d.progress_ratio = 1
 			else:
 				path_follow_3d.progress += (delta*movement_speed*direction)
-				print(path_follow_3d.progress_ratio)
+				
 
 			if once and path_follow_3d.progress_ratio > 0.9:
 				block_it = true
-				print("blocked")
+				
 
 	if Engine.is_editor_hint() and global_position != Vector3.ZERO:
 		global_position = Vector3.ZERO
