@@ -8,6 +8,9 @@ extends Path3D
 @export var is_on_from_start : bool = true
 @export var look_at_object_when_activated : bool
 @export var ping_pong : bool
+@export var once : bool
+
+var block_it : bool
 
 var original_object_pos : Vector3
 var direction : float = 1
@@ -33,8 +36,16 @@ func _process(delta: float) -> void:
 					direction = -1
 				if path_follow_3d.progress_ratio < 0.01:
 					direction = 1
+					
+			if block_it:
+				path_follow_3d.progress_ratio = 1
+			else:
+				path_follow_3d.progress += (delta*movement_speed*direction)
+				print(path_follow_3d.progress_ratio)
 
-			path_follow_3d.progress += (delta*movement_speed*direction)
+			if once and path_follow_3d.progress_ratio > 0.9:
+				block_it = true
+				print("blocked")
 
 	if Engine.is_editor_hint() and global_position != Vector3.ZERO:
 		global_position = Vector3.ZERO
