@@ -158,6 +158,14 @@ respawn_delay = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0491, 44.5316, -35.1116)
 respawn_delay = 5.0
 
+[node name="platform-falling16" parent="World" instance=ExtResource("8_gayj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3369, 41.5316, -17.3883)
+respawn_delay = 5.0
+
+[node name="platform-falling17" parent="World" instance=ExtResource("8_gayj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9824, 41.5316, -19.884)
+respawn_delay = 5.0
+
 [node name="platform-falling14" parent="World" instance=ExtResource("8_gayj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0491, 45.7837, -37.3432)
 respawn_delay = 5.0
@@ -243,6 +251,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69144, -0.999998, 11.4093)
 
 [node name="flag" parent="World" instance=ExtResource("22_w6jhc")]
 transform = Transform3D(2.8583, 0, 0, 0, 2.8583, 0, 0, 0, 2.8583, 26.4403, 79.3866, -23.4721)
+speedrun_mode = true
 
 [node name="Moving Platform 1" type="Node3D" parent="World"]
 
@@ -805,6 +814,12 @@ transform = Transform3D(-6.87997e-08, 2.87259e-08, -1.70564, -0.21785, 1.69167, 
 [node name="spike-block-wide3" parent="Tower" instance=ExtResource("30_tdsab")]
 transform = Transform3D(-7.45558e-08, 0, -1.70564, 0, 1.70564, 0, 1.70564, 0, -7.4556e-08, 25.4172, 55.3025, -41.0168)
 
+[node name="spike-block-wide5" parent="Tower" instance=ExtResource("30_tdsab")]
+transform = Transform3D(-7.45558e-08, 0, -1.70564, 0, 1.70564, 0, 1.70564, 0, -7.4556e-08, 30.5341, 46.7743, -41.0168)
+
+[node name="spike-block-wide6" parent="Tower" instance=ExtResource("30_tdsab")]
+transform = Transform3D(-7.45558e-08, 0, -1.70564, 0, 1.70564, 0, 1.70564, 0, -7.4556e-08, 25.4172, 46.7743, -41.0168)
+
 [node name="spike-block-wide4" parent="Tower" instance=ExtResource("30_tdsab")]
 transform = Transform3D(-7.45558e-08, 0, -1.70564, 0, 1.70564, 0, 1.70564, 0, -7.4556e-08, 28.1001, 58.8783, -41.0168)
 
@@ -870,6 +885,21 @@ transform = Transform3D(4.26402, 0, 0, 0, 4.26402, 0, 0, 0, 4.26402, 30.694, 37.
 [node name="trap-spikes4" parent="Moving Wall 1" instance=ExtResource("32_ixsda")]
 transform = Transform3D(4.26402, 0, 0, 0, 4.26402, 0, 0, 0, 4.26402, 30.3533, 36.7136, -11.4932)
 
+[node name="trap-spikes5" parent="Moving Wall 1" instance=ExtResource("32_ixsda")]
+transform = Transform3D(4.26402, 0, 0, 0, 4.26402, 0, 0, 0, 4.26402, 38.8813, 37.1687, -20.0212)
+
+[node name="trap-spikes6" parent="Moving Wall 1" instance=ExtResource("32_ixsda")]
+transform = Transform3D(4.26402, 0, 0, 0, 4.26402, 0, 0, 0, 4.26402, 38.8813, 37.1687, -16.6039)
+
+[node name="trap-spikes7" parent="Moving Wall 1" instance=ExtResource("32_ixsda")]
+transform = Transform3D(4.26402, 0, 0, 0, 4.26402, 0, 0, 0, 4.26402, 41.6304, 37.1687, -20.1199)
+
+[node name="trap-spikes9" parent="Moving Wall 1" instance=ExtResource("32_ixsda")]
+transform = Transform3D(8.08281, 0, 0, 0, 8.08281, 0, 0, 0, 8.08281, 40.9133, 37.616, -25.9525)
+
+[node name="trap-spikes8" parent="Moving Wall 1" instance=ExtResource("32_ixsda")]
+transform = Transform3D(4.26402, 0, 0, 0, 4.26402, 0, 0, 0, 4.26402, 41.6304, 37.1687, -16.2828)
+
 [node name="button" parent="." node_paths=PackedStringArray("target") instance=ExtResource("20_rinfe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6959, 37.4004, -36.0914)
 target = NodePath("../Moving Wall 1/moving_object_path")
@@ -912,6 +942,9 @@ transform = Transform3D(0.606218, 0, 0.35, 0, 0.7, 0, -0.35, 0, 0.606218, 21.626
 
 [node name="platform-medium3" parent="." instance=ExtResource("33_tb8hl")]
 transform = Transform3D(0.606218, 0, 0.35, 0, 0.7, 0, -0.35, 0, 0.606218, 26.389, 4.52558, -3.66487)
+
+[node name="platform-medium4" parent="." instance=ExtResource("33_tb8hl")]
+transform = Transform3D(0.606218, 0, 0.35, 0, 0.7, 0, -0.35, 0, 0.606218, 37.0196, 40.9256, -14.6522)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
