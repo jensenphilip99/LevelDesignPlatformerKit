@@ -89,7 +89,7 @@ environment = ExtResource("1_up5ou")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_sjceo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44869, 0.5, 44.2515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45978, 0.5, 45.1855)
 view = NodePath("../View")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
@@ -181,27 +181,23 @@ respawn_delay = 5.0
 
 [node name="platform-falling19" parent="World" instance=ExtResource("8_gayj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0493, 64.1413, -27.9592)
-respawn_delay = 5.0
+respawn_delay = 3.0
 
 [node name="platform-falling20" parent="World" instance=ExtResource("8_gayj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0493, 67.5468, -24.7285)
-respawn_delay = 5.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0493, 67.2233, -24.5437)
+respawn_delay = 3.0
 
 [node name="platform-falling30" parent="World" instance=ExtResource("8_gayj6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0493, 66.4374, -28.0275)
-respawn_delay = 5.0
-
-[node name="platform-falling22" parent="World" instance=ExtResource("8_gayj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0509, 68.6991, -27.9724)
-respawn_delay = 5.0
+respawn_delay = 3.0
 
 [node name="platform-falling31" parent="World" instance=ExtResource("8_gayj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0509, 69.7631, -24.7506)
-respawn_delay = 5.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0509, 69.7168, -24.7506)
+respawn_delay = 3.0
 
 [node name="platform-falling29" parent="World" instance=ExtResource("8_gayj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0509, 70.9628, -27.9724)
-respawn_delay = 5.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0509, 70.8216, -27.9698)
+respawn_delay = 3.0
 
 [node name="platform-falling17" parent="World" instance=ExtResource("8_gayj6")]
 transform = Transform3D(0.909556, 0, -0.415582, 0, 1, 0, 0.415582, 0, 0.909556, 42.0471, 41.5316, -20.2233)
@@ -995,7 +991,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.6829, 55.3445, -42.0648)
 trampoline_strength = 20.0
 
 [node name="trampoline13" parent="Tower" instance=ExtResource("28_f562n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0465, 73.3723, -27.9367)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.0465, 73.2958, -27.9367)
 trampoline_strength = 30.0
 
 [node name="trampoline9" parent="Tower" instance=ExtResource("28_f562n")]
@@ -1254,7 +1250,7 @@ transform = Transform3D(0.788934, 0.00631298, 0.451092, -0.00286324, 0.908775, -
 transform = Transform3D(0.606218, 0, 0.35, 0, 0.7, 0, -0.35, 0, 0.606218, 37.0196, 40.9256, -14.6522)
 
 [node name="platform-medium5" parent="." instance=ExtResource("33_tb8hl")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 37.0196, 71.8181, -24.7338)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 37.0196, 72.1553, -24.7338)
 
 [node name="platform-medium7" parent="." instance=ExtResource("33_tb8hl")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 37.0196, 63.3287, -24.7338)
@@ -1263,7 +1259,7 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 37.0196, 63.3287, -24.7
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 37.0196, 65.2451, -31.0723)
 
 [node name="platform-medium6" parent="." instance=ExtResource("33_tb8hl")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 37.0196, 69.9945, -31.1901)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 37.1503, 68.4916, -28.0158)
 
 [node name="platform-medium12" parent="." instance=ExtResource("33_tb8hl")]
 transform = Transform3D(0.895958, 0, 0, 0, 0.895958, 0, 0, 0, 0.895958, 28.2945, 38.3995, -43.8352)
