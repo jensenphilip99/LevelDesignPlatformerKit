@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dceksomi0gou2"]
+[gd_scene load_steps=41 format=3 uid="uid://dceksomi0gou2"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_up5ou"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_sjceo"]
@@ -29,9 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://c7roranuc8et7" path="res://Objects with Collision/Rock_Formation.tscn" id="29_tt75a"]
 [ext_resource type="PackedScene" uid="uid://dpo3dr26b06w3" path="res://objects/spike_block_wide.tscn" id="30_tdsab"]
 [ext_resource type="PackedScene" uid="uid://dl65sq7ysvevy" path="res://Objects with Collision/wall_round.tscn" id="32_6ty4j"]
-[ext_resource type="PackedScene" uid="uid://bqh67biosnec8" path="res://models/prototyping/models/shape-hollow-cylinder-detailed.glb" id="32_bc3bi"]
 [ext_resource type="PackedScene" uid="uid://dwvhgrcyestak" path="res://objects/trap_spikes.tscn" id="32_ixsda"]
 [ext_resource type="PackedScene" uid="uid://dppaaoqj1t6n5" path="res://objects/spike_block.tscn" id="32_t3w5k"]
+[ext_resource type="PackedScene" uid="uid://s8rmfi1rpu1q" path="res://Objects with Collision/shape_hollow_cylinder_detailed_2.tscn" id="33_by6hx"]
 [ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://objects/platform_medium.tscn" id="33_tb8hl"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
@@ -40,7 +40,7 @@ dof_blur_far_distance = 0.01
 
 [sub_resource type="Curve3D" id="Curve3D_sbr52"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 62.1343, 9.66809, -8.74137, 0, 0, 0, 0, 0, 0, 45.5445, 9.78504, -9.42868),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 61.0481, 9.67575, -8.78637, 0, 0, 0, 0, 0, 0, 45.5445, 9.78504, -9.42868),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -76,9 +76,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s84dl"]
-albedo_color = Color(0.389287, 0.389287, 0.389287, 1)
 
 [node name="Main" type="Node3D"]
 
@@ -211,6 +208,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.3256, 7.13357, -4.9188)
 [node name="checkpoint3" parent="World" instance=ExtResource("12_035ln")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2258, 37.6993, -20.2435)
 
+[node name="checkpoint4" parent="World" instance=ExtResource("12_035ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2258, 47.9005, -41.3277)
+
+[node name="checkpoint5" parent="World" instance=ExtResource("12_035ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2258, 62.5353, -40.4212)
+
 [node name="checkpoint2" parent="World" instance=ExtResource("12_035ln")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3999, 22.0883, -27.9611)
 
@@ -288,13 +291,17 @@ transform = Transform3D(1.62279, 0, 0.430457, 0, 1.67891, 0, -0.430457, 0, 1.622
 
 [node name="door" parent="World" instance=ExtResource("17_q4dtg")]
 transform = Transform3D(0.0103147, 0, 0.999947, 0, 1, 0, -0.999947, 0, 0.0103147, 26.5367, 81.2223, -23.5462)
-visible = false
 look_at_door_when_opens = true
 
 [node name="button" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("17_uvilp")]
 transform = Transform3D(5.27361, 0, 0, 0, 10.5713, 0, 0, 0, 5.30689, 10.5001, -1.92044, 4.36796)
-visible = false
 target = NodePath("../door")
+
+[node name="button-square" parent="World/button" index="0"]
+visible = false
+
+[node name="button" parent="World/button/button-square" index="0"]
+transform = Transform3D(1.36172, 0, 0, 0, 1.13457, 0, 0, 0, 1.36172, 0.239558, 0.0148828, -0.157594)
 
 [node name="CollisionShape3D" parent="World/button/ButtonArea3D" index="0"]
 visible = true
@@ -928,12 +935,6 @@ transform = Transform3D(-9.42163, -1.4193, -2.22943, -1.30166, 9.67592, -0.65901
 [node name="rocks12" parent="." instance=ExtResource("29_tt75a")]
 transform = Transform3D(6.67377, -0.638005, -7.12781, -1.55416, 9.3845, -2.29517, 6.98551, 2.69744, 6.29909, 35.8942, 36.4007, -13.5707)
 
-[node name="shape-hollow-cylinder-detailed2" parent="." instance=ExtResource("32_bc3bi")]
-transform = Transform3D(13.2516, 0, 0, 0, 13.2516, 0, 0, 0, 13.2516, 72.9842, -2.94067, -8.84414)
-
-[node name="shape-hollow-cylinder-detailed" parent="shape-hollow-cylinder-detailed2" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_s84dl")
-
 [node name="platform-medium" parent="." instance=ExtResource("33_tb8hl")]
 transform = Transform3D(0.416646, 0, 0, 0, 0.416646, 0, 0, 0, 0.416646, 28.2148, 55.3477, -41.7898)
 
@@ -946,9 +947,11 @@ transform = Transform3D(0.606218, 0, 0.35, 0, 0.7, 0, -0.35, 0, 0.606218, 26.389
 [node name="platform-medium4" parent="." instance=ExtResource("33_tb8hl")]
 transform = Transform3D(0.606218, 0, 0.35, 0, 0.7, 0, -0.35, 0, 0.606218, 37.0196, 40.9256, -14.6522)
 
+[node name="shape-hollow-cylinder-detailed3" parent="." instance=ExtResource("33_by6hx")]
+transform = Transform3D(12.7325, 0, 0, 0, 12.7325, 0, 0, 0, 12.7325, 72.5291, -2.26926, -9.05824)
+
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
 [connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
 
 [editable path="World/button"]
-[editable path="shape-hollow-cylinder-detailed2"]
